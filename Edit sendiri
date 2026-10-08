@@ -1411,8 +1411,8 @@ local function CreateTab(name, active)
     return PageScroll
 end
 
-local TabAutomation   = CreateTab("🌟 MAIN", true)
-local TabAutomation   = CreateTab("⚡ Automation", true)
+local TabMain         = CreateTab("🏠 MAIN", true)
+local TabAutomation   = CreateTab("⚡ Automation", false)
 local TabArcadiaEvent = CreateTab("🎪 EVENT ARCADIA", false)
 local TabBooster      = CreateTab("🚀 Booster & RAM", false)
 local TabWebhooks     = CreateTab("📡 Discord Webhooks", false)
@@ -1615,8 +1615,12 @@ local function CreateInfoLabel(parent, text)
 end
 
 -- ========================================================
--- 6. MENU SETUP (AUTOMATION, ARCADIA, BOOSTER, WEBHOOKS, TELEPORT)
+-- 6. MENU SETUP (MAIN, AUTOMATION, ARCADIA, BOOSTER, WEBHOOKS, TELEPORT)
 -- ========================================================
+local DropMainInfo = CreateDropdown(TabMain, "🏠 Welcome to Shadow Hub")
+CreateInfoLabel(DropMainInfo, "Shadow Hub V8 - MAIN Menu")
+CreateInfoLabel(DropMainInfo, "Silakan pilih fitur yang tersedia pada sidebar di sebelah kiri.")
+
 local DropElemental = CreateDropdown(TabAutomation, "Event Elemental TP")
 local UIStatus_Elemental = CreateStatusLabel(DropElemental)
 CreateToggle(DropElemental, "Enable Auto TP Cuaca", "AutoTP", function(state)
